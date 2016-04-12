@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">请输入内容</span></div>
+
+<script type="text/javascript">
+
+(function() {
+  var input = getObj("aqi-input"),
+  	  button = getObj("button"),
+  	  aqiSpan = getObj("aqi-display");
+
+  button.onclick = function(){
+  	input.value = input.value.trim();    //去除前后空格
+  	var value = input.value;
+   	aqiSpan.innerHTML = value ? value : "请输入内容";
+  }
+  /*
+   * @func:根据ID获取对象返回
+  */
+  function getObj(id){
+  		return document.getElementById(id);
+  }
+})();
+
+</script>
+</body>
+</html>
